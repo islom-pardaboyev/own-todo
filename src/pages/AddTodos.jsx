@@ -15,7 +15,7 @@ function AddTodos() {
     e.preventDefault();
     const { todoName, todoDate } = e.target.elements;
     const data = {
-      id: todos.length ? todos[todos.length - 1].id + 1 : 1,
+      id: String(todos.length > 0 ? Number(todos[todos.length - 1].id) + 1 : 1),
       todoName: todoName.value,
       todoDate: todoDate.value,
     };
