@@ -40,9 +40,7 @@ const CustomTable = ({ todos }) => (
     columns={columns}
     dataSource={todos}
     onChange={onChange}
-    showSorterTooltip={{
-      target: "sorter-icon",
-    }}
+    
   />
 );
 export default CustomTable;

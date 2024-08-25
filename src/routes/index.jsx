@@ -13,6 +13,7 @@ function CustomRoutes() {
         <Routes>
           <Route path="/" element={<AllTodos />} />
           <Route path="/add-todo" element={<AddTodos />} />
+          <Route path="/update/:id" element={<AddTodos />} />
         </Routes>
       </div>
     </div>

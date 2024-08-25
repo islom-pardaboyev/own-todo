@@ -4,9 +4,11 @@ import axios from "axios";
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import { Context } from "../context/Context";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 function AllTodos() {
   const { todos, setTodos } = useContext(Context);
+  const navigate = useNavigate()
 
   const [refresh, setRefresh] = useState(false);
   useEffect(() => {
@@ -22,7 +24,7 @@ function AllTodos() {
             >
               <DeleteOutlined />
             </button>
-            <button className="p-3 border-green-500 w-[30px] h-[30px] border text-green-500 hover:bg-green-500 hover:text-white duration-300 flex items-center justify-center rounded-full">
+            <button onClick={() => navigate(`/update/${item.id}`)} className="p-3 border-green-500 w-[30px] h-[30px] border text-green-500 hover:bg-green-500 hover:text-white duration-300 flex items-center justify-center rounded-full">
               <EditOutlined />
             </button>
           </div>
